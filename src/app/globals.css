@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF3E6;
+  --foreground: #3E543B;
+  --primary: #3E543B;
+  --secondary: #F4D7A8;
+  --accent: #E2725B;
+  --highlight: #6BBF59;
+  --muted: #4A4A4A;
+  --warm: #E4B873;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+}
+
+/* 防止菜单打开时背景滚动 */
+body.menu-open {
+  position: fixed;
+  top: calc(var(--scroll-y, 0) * -1);
+  width: 100%;
+  overflow: hidden;
+}
