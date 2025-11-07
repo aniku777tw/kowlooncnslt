@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import Script from "next/script";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import CourseHighlightCard from "@/components/Home/CourseHighlightCard";
@@ -5,6 +7,55 @@ import { socialLinks } from "@/constants/socialLinks";
 import crepeImage from "@/images/可麗餅.png";
 import milkImage from "@/images/S__18628640_0.jpg";
 import friedMilkImage from "@/images/炸牛奶.jpg";
+import logoImage from "@/images/logo.webp";
+
+const siteUrl = "https://kowlooncnslt.com";
+
+export const metadata: Metadata = {
+  title: "夜市翻身學｜夜市創業課程與顧問諮詢",
+  description:
+    "夜市翻身學提供可麗餅、牛奶飲品、炸牛奶等夜市創業課程與一對一顧問諮詢，從選品、攤位營運到行銷策略，帶你快速打造高收益夜市品牌。",
+  keywords: [
+    "夜市翻身學",
+    "夜市創業",
+    "夜市課程",
+    "可麗餅課程",
+    "炸牛奶",
+    "夜市顧問",
+    "攤車創業",
+    "創業諮詢",
+  ],
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title: "夜市翻身學｜夜市創業課程與顧問諮詢",
+    description:
+      "夜市翻身學提供夜市攤商專屬課程與顧問服務，避開創業陷阱、打造標準 SOP、穩定提升收益。",
+    url: siteUrl,
+    siteName: "夜市翻身學",
+    locale: "zh_TW",
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}${logoImage.src}`,
+        width: logoImage.width,
+        height: logoImage.height,
+        alt: "夜市翻身學品牌標誌",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "夜市翻身學｜夜市創業課程與顧問諮詢",
+    description:
+      "夜市翻身學提供夜市創業課程、攤位 SOP 與行銷策略，協助新手快速穩健翻身。",
+    images: [`${siteUrl}${logoImage.src}`],
+  },
+  other: {
+    "og:locale:alternate": "zh_HK",
+  },
+};
 
 export default function Home() {
   const lineLink = socialLinks.find((link) => link.label === "LINE")?.href;
@@ -28,7 +79,7 @@ export default function Home() {
       description: "人氣甜點一次學會，酥脆口感與食材控管完整傳授。",
       backgroundImage: friedMilkImage.src,
     },
-  ]
+  ];
 
   const whyChooseUs = [
     {
@@ -46,10 +97,54 @@ export default function Home() {
       description:
         "翻身不只是一次課，未來持續提供資源與方案，陪你走得更穩。"
     }
-  ]
+  ];
+
+  const organizationLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "夜市翻身學",
+    url: siteUrl,
+    logo: `${siteUrl}${logoImage.src}`,
+    sameAs: socialLinks.map((link) => link.href),
+    description:
+      "夜市翻身學提供夜市創業課程與一對一顧問諮詢服務，協助攤商優化產品、營運與行銷。",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      availableLanguage: ["zh-TW"],
+      url: lineLink,
+    },
+  };
+
+  const featuredCoursesItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "夜市翻身學熱門課程",
+    itemListElement: coursesIntro.map((course, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Course",
+        name: course.title,
+        description: course.description,
+        url: `${siteUrl}/courses#${encodeURIComponent(course.title)}`,
+        provider: {
+          "@type": "Organization",
+          name: "夜市翻身學",
+          sameAs: siteUrl,
+        },
+      },
+    })),
+  };
 
   return (
     <ContentWrapper>
+        <Script id="organization-jsonld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(organizationLd)}
+        </Script>
+        <Script id="featured-courses-jsonld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(featuredCoursesItemList)}
+        </Script>
         {/* Hero Section */}
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-32">
           <div className="max-w-4xl mx-auto text-center">

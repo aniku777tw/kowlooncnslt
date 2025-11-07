@@ -1,13 +1,56 @@
+import type { Metadata } from "next";
+import Script from "next/script";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import CourseCard from "@/components/Courses/CourseCard";
 import { socialLinks } from "@/constants/socialLinks";
 import crepeImage from "@/images/可麗餅.png";
 import milkImage from "@/images/S__18628640_0.jpg";
 import friedMilkImage from "@/images/炸牛奶.jpg";
+import logoImage from "@/images/logo.webp";
 
-export const metadata = {
-  title: "課程資訊 - 夜市翻身學",
-  description: "探索我們的專業課程，提升您的技能與知識",
+const siteUrl = "https://kowlooncnslt.com";
+const coursesPageUrl = `${siteUrl}/courses`;
+
+export const metadata: Metadata = {
+  title: "夜市翻身學課程資訊｜夜市創業實戰課程總覽",
+  description:
+    "夜市翻身學提供可麗餅、牛奶飲品、炸牛奶等熱門夜市創業課程，涵蓋配方研發、攤位營運、行銷策略與成本控管，協助你快速打造高收益夜市品牌。",
+  keywords: [
+    "夜市課程",
+    "夜市創業課程",
+    "可麗餅教學",
+    "炸牛奶課程",
+    "夜市創業顧問",
+    "夜市翻身學",
+    "攤車創業",
+  ],
+  alternates: {
+    canonical: coursesPageUrl,
+  },
+  openGraph: {
+    title: "夜市翻身學課程資訊｜夜市創業實戰課程總覽",
+    description:
+      "了解夜市翻身學的實戰課程內容，從配方、設備、營運到行銷一次到位。",
+    url: coursesPageUrl,
+    siteName: "夜市翻身學",
+    locale: "zh_TW",
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}${logoImage.src}`,
+        width: logoImage.width,
+        height: logoImage.height,
+        alt: "夜市翻身學品牌標誌",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "夜市翻身學課程資訊",
+    description:
+      "夜市翻身學提供夜市創業完整課程與顧問服務，協助你打造人氣夜市攤位。",
+    images: [`${siteUrl}${logoImage.src}`],
+  },
 };
 
 export default function CoursesPage() {
@@ -52,7 +95,6 @@ export default function CoursesPage() {
       id: 1,
       icon: "🥞",
       title: "可麗餅翻身班",
-      highlight: "甜點人氣爆款",
       description:
         "手把手教你打造排隊級可麗餅攤位，配方、備料、出餐節奏一次掌握。",
       features: [
@@ -67,7 +109,6 @@ export default function CoursesPage() {
       id: 2,
       icon: "🧋",
       title: "牛奶味研習會",
-      highlight: "奶系飲品專修",
       description:
         "用最穩定的牛奶飲品 SOP 打開你的飲料攤。備料到出杯，一天上手。",
       features: [
@@ -82,7 +123,6 @@ export default function CoursesPage() {
       id: 3,
       icon: "🍮",
       title: "炸牛奶手作課",
-      highlight: "夜市甜點新寵",
       description:
         "把酥脆奶香變成你的獨門招牌。從製程到攤位操作完整拆解。",
       features: [
@@ -95,8 +135,36 @@ export default function CoursesPage() {
     },
   ];
 
+  const courseCatalogLd = {
+    "@context": "https://schema.org",
+    "@type": "CourseCatalog",
+    name: "夜市翻身學課程資訊",
+    description:
+      "夜市翻身學的夜市創業課程總覽，包含可麗餅翻身班、牛奶味研習會與炸牛奶手作課。",
+    provider: {
+      "@type": "Organization",
+      name: "夜市翻身學",
+      url: siteUrl,
+    },
+    course: courses.map((course) => ({
+      "@type": "Course",
+      name: course.title,
+      description: course.description,
+      url: `${coursesPageUrl}#${encodeURIComponent(course.title)}`,
+      provider: {
+        "@type": "Organization",
+        name: "夜市翻身學",
+        url: siteUrl,
+      },
+      teaches: course.features,
+    })),
+  };
+
   return (
     <ContentWrapper>
+        <Script id="course-catalog-jsonld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(courseCatalogLd)}
+        </Script>
         {/* Header */}
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
