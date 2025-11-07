@@ -2,9 +2,9 @@ import ContentWrapper from "@/components/common/ContentWrapper";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import CourseHighlightCard from "@/components/Home/CourseHighlightCard";
 import { socialLinks } from "@/constants/socialLinks";
-import crepeImage from "@/image/可麗餅.png";
-import milkImage from "@/image/S__18628640_0.jpg";
-import friedMilkImage from "@/image/炸牛奶.jpg";
+import crepeImage from "@/images/可麗餅.png";
+import milkImage from "@/images/S__18628640_0.jpg";
+import friedMilkImage from "@/images/炸牛奶.jpg";
 
 export default function Home() {
   const lineLink = socialLinks.find((link) => link.label === "LINE")?.href;

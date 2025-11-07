@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, type MouseEvent } from "react";
 import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
-import logo from "@/image/logo.webp";
+import logo from "@/images/logo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import SocialLinks from "@/components/common/SocialLinks";
