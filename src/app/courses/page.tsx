@@ -3,8 +3,8 @@ import Script from "next/script";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import CourseCard from "@/components/Courses/CourseCard";
 import { socialLinks } from "@/constants/socialLinks";
-import crepeImage from "@/images/可麗餅.png";
-import milkImage from "@/images/S__18628640_0.jpg";
+import crepeImage from "@/images/可麗餅.jpg";
+import milkImage from "@/images/牛奶味.jpg";
 import friedMilkImage from "@/images/炸牛奶.jpg";
 import logoImage from "@/images/logo.webp";
 
