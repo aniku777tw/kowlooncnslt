@@ -82,10 +82,10 @@ export default function NewsPage() {
       <ScrollReveal>
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-[#3E543B] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-brand-primary mb-6">
               新聞報導
             </h1>
-            <p className="text-base md:text-xl text-[#4A4A4A] leading-relaxed">
+            <p className="text-base md:text-xl text-brand-muted leading-relaxed">
               關注夜市翻身學在媒體、論壇與產業界的最新曝光，看到更多夜市創業成功案例與產業洞察。
             </p>
           </div>
@@ -96,11 +96,11 @@ export default function NewsPage() {
         <div className="max-w-4xl mx-auto space-y-8">
           {newsItems.map((item, index) => (
             <ScrollReveal key={item.title} delay={index * 0.1}>
-              <article className="relative overflow-hidden rounded-3xl border border-[#E4B873]/60 bg-[#FAF3E6]/80 backdrop-blur-sm shadow-lg transition-transform duration-200 hover:-translate-y-2">
+              <article className="relative overflow-hidden rounded-3xl border border-[rgba(var(--warm-rgb),0.6)] bg-[rgba(var(--background-rgb),0.8)] backdrop-blur-sm shadow-lg transition-transform duration-200 hover:-translate-y-2">
                 <div className="p-6 md:p-8">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-[#6BBF59] font-semibold">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-brand-highlight font-semibold">
                     <span>{item.source}</span>
-                    <time dateTime={item.date} className="text-[#4A4A4A]/80">
+                    <time dateTime={item.date} className="text-[rgba(var(--muted-rgb),0.8)]">
                       {new Date(item.date).toLocaleDateString("zh-TW", {
                         year: "numeric",
                         month: "long",
@@ -108,17 +108,17 @@ export default function NewsPage() {
                       })}
                     </time>
                   </div>
-                  <h2 className="mt-4 text-2xl md:text-3xl font-bold text-[#3E543B]">
+                  <h2 className="mt-4 text-2xl md:text-3xl font-bold text-brand-primary">
                     {item.title}
                   </h2>
-                  <p className="mt-3 text-sm md:text-base leading-relaxed text-[#4A4A4A]">
+                  <p className="mt-3 text-sm md:text-base leading-relaxed text-brand-muted">
                     {item.summary}
                   </p>
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-6 text-[#E2725B] font-semibold hover:text-[#C85F4A]"
+                    className="inline-flex items-center gap-2 mt-6 text-brand-accent font-semibold hover:text-[var(--accent-darker)]"
                   >
                     觀看完整報導
                     <span aria-hidden>→</span>
@@ -132,12 +132,12 @@ export default function NewsPage() {
 
       <ScrollReveal>
         <section className="container mx-auto px-5 md:px-6 pb-20">
-          <div className="max-w-4xl mx-auto bg-[#3E543B] text-[#FAF3E6] rounded-[28px] p-8 md:p-12 shadow-2xl">
+          <div className="max-w-4xl mx-auto bg-brand-primary text-brand-background rounded-[28px] p-8 md:p-12 shadow-2xl">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-center">
                 想了解更多夜市創業案例？
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-center text-[#FAF3E6]/90">
+              <p className="text-base md:text-lg leading-relaxed text-center text-[rgba(var(--background-rgb),0.9)]">
                 直接與夜市翻身學顧問團隊聯繫，獲得專屬夜市創業諮詢與最新活動資訊。
               </p>
               {lineLink && (
@@ -146,7 +146,7 @@ export default function NewsPage() {
                     href={lineLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#E4B873] text-[#3E543B] font-semibold text-lg transition-transform duration-150 hover:-translate-y-1 hover:bg-[#D3A862]"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-warm text-brand-primary font-semibold text-lg transition-transform duration-150 hover:-translate-y-1 hover:bg-[var(--warm-dark)]"
                   >
                     立即聯繫顧問
                   </a>

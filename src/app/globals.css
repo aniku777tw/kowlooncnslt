@@ -2,13 +2,28 @@
 
 :root {
   --background: #FAF3E6;
+  --background-soft: #FFF7E6;
   --foreground: #3E543B;
   --primary: #3E543B;
+  --primary-dark: #324331;
+  --primary-deep: #4E6A49;
   --secondary: #F4D7A8;
   --accent: #E2725B;
+  --accent-dark: #d1624d;
+  --accent-darker: #c85f4a;
   --highlight: #6BBF59;
+  --highlight-dark: #5da84d;
   --muted: #4A4A4A;
   --warm: #E4B873;
+  --warm-dark: #d3a862;
+
+  --background-rgb: 250, 243, 230;
+  --foreground-rgb: 62, 84, 59;
+  --secondary-rgb: 244, 215, 168;
+  --accent-rgb: 226, 114, 91;
+  --highlight-rgb: 107, 191, 89;
+  --muted-rgb: 74, 74, 74;
+  --warm-rgb: 228, 184, 115;
 }
 
 html {
@@ -19,6 +34,40 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans);
+}
+
+@layer utilities {
+  .text-brand-primary { color: var(--primary); }
+  .text-brand-muted { color: var(--muted); }
+  .text-brand-accent { color: var(--accent); }
+  .text-brand-background { color: var(--background); }
+  .text-brand-highlight { color: var(--highlight); }
+  .text-brand-warm { color: var(--warm); }
+
+  .bg-brand-background { background-color: var(--background); }
+  .bg-brand-soft { background-color: var(--background-soft); }
+  .bg-brand-primary { background-color: var(--primary); }
+  .bg-brand-secondary { background-color: var(--secondary); }
+  .bg-brand-accent { background-color: var(--accent); }
+  .bg-brand-warm { background-color: var(--warm); }
+
+  .border-brand-warm { border-color: var(--warm); }
+  .border-brand-secondary { border-color: var(--secondary); }
+  .border-brand-primary { border-color: var(--primary); }
+
+  .from-brand-warm { --tw-gradient-from: var(--warm) var(--tw-gradient-from-position); --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .from-brand-primary { --tw-gradient-from: var(--primary) var(--tw-gradient-from-position); --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .via-brand-primary-deep { --tw-gradient-stops: var(--tw-gradient-from), var(--primary-deep) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+  .via-brand-secondary { --tw-gradient-stops: var(--tw-gradient-from), var(--secondary) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+  .to-brand-background { --tw-gradient-to: var(--background) var(--tw-gradient-to-position); }
+  .to-brand-highlight { --tw-gradient-to: var(--highlight) var(--tw-gradient-to-position); }
+
+  .hover\:bg-brand-primary-dark:hover { background-color: var(--primary-dark); }
+  .hover\:bg-brand-accent-dark:hover { background-color: var(--accent-dark); }
+  .hover\:bg-brand-warm-dark:hover { background-color: var(--warm-dark); }
+  .hover\:text-brand-accent:hover { color: var(--accent); }
+  .hover\:text-brand-primary:hover { color: var(--primary); }
+  .hover\:text-brand-warm:hover { color: var(--warm); }
 }
 
 /* 防止菜单打开时背景滚动 */

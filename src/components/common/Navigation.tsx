@@ -46,7 +46,7 @@ export default function Navigation() {
         <Link href="/" className="inline-flex items-center">
           <span
             aria-hidden
-            className="block w-20 h-20 bg-[#3E543B]"
+            className="block w-20 h-20 bg-brand-primary"
             style={{
               WebkitMaskImage: `url(${logo.src})`,
               maskImage: `url(${logo.src})`,
@@ -61,16 +61,16 @@ export default function Navigation() {
           <span className="sr-only">夜市翻身學</span>
         </Link>
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 text-[var(--muted)]">
+        <div className="hidden md:flex items-center gap-8 text-brand-muted">
           <Link
             href="/courses"
-            className="text-[#3E543B] hover:text-[#E2725B] transition-colors"
+            className="text-brand-primary hover:text-brand-accent transition-colors"
           >
             課程資訊
           </Link>
           <Link
             href="/#about"
-            className="text-[#3E543B] hover:text-[#E2725B] transition-colors"
+            className="text-brand-primary hover:text-brand-accent transition-colors"
             onClick={(e) => {
               e.preventDefault();
               scrollToElement("about");
@@ -80,13 +80,13 @@ export default function Navigation() {
           </Link>
           <Link
             href="/news"
-            className="text-[#3E543B] hover:text-[#E2725B] transition-colors"
+            className="text-brand-primary hover:text-brand-accent transition-colors"
           >
             新聞報導
           </Link>
           <Link
             href="/#about"
-            className="text-[#3E543B] hover:text-[#E2725B] transition-colors"
+            className="text-brand-primary hover:text-brand-accent transition-colors"
             onClick={(e) => {
               e.preventDefault();
               scrollToElement("contact");
@@ -98,7 +98,7 @@ export default function Navigation() {
         </div>
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#3E543B] p-2"
+          className="md:hidden text-brand-primary p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -113,7 +113,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-gradient-to-br from-[#FAF3E6] via-[#F4D7A8] to-[#FAF3E6] z-50 md:hidden"
+            className="fixed inset-0 bg-gradient-to-br from-[var(--background)] via-[var(--secondary)] to-[var(--background)] z-50 md:hidden"
           >
             <motion.div
               initial={{ y: -20, opacity: 0 }}
@@ -127,14 +127,14 @@ export default function Navigation() {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="flex items-center justify-between p-6 border-b border-[#E4B873]/40"
+                className="flex items-center justify-between p-6 border-b border-[rgba(var(--warm-rgb),0.4)]"
               >
-                <div className="text-2xl font-bold text-[#3E543B]">選單</div>
+                <div className="text-2xl font-bold text-brand-primary">選單</div>
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-[#3E543B] p-2 hover:bg-[#F4D7A8]/70 rounded-full transition-all"
+                  className="text-brand-primary p-2 hover:bg-[rgba(var(--secondary-rgb),0.7)] rounded-full transition-all"
                   aria-label="Close menu"
                 >
                   <FiX className="h-6 w-6" />
@@ -193,19 +193,19 @@ export default function Navigation() {
                   >
                     <Link
                       href={item.href}
-                      className="w-full group relative overflow-hidden rounded-2xl bg-[#FAF3E6]/90 backdrop-blur-sm border border-[#E4B873]/60 hover:border-[#E2725B]/60 transition-all duration-300 block"
+                      className="w-full group relative overflow-hidden rounded-2xl bg-[rgba(var(--background-rgb),0.9)] backdrop-blur-sm border border-[rgba(var(--warm-rgb),0.6)] hover:border-[rgba(var(--accent-rgb),0.6)] transition-all duration-300 block"
                       onClick={item.onClick}
                     >
                       <div className="flex items-center gap-4 p-6">
                         <div className="flex-1">
-                          <div className="text-xl font-semibold text-[#3E543B] group-hover:text-[#E2725B] transition-colors">
+                          <div className="text-xl font-semibold text-brand-primary group-hover:text-brand-accent transition-colors">
                             {item.title}
                           </div>
-                          <div className="text-sm text-[#4A4A4A] mt-1">
+                          <div className="text-sm text-brand-muted mt-1">
                             {item.description}
                           </div>
                         </div>
-                        <FiArrowRight className="h-5 w-5 text-[#E4B873] transition-colors group-hover:text-[#E2725B]" />
+                        <FiArrowRight className="h-5 w-5 text-brand-warm transition-colors group-hover:text-brand-accent" />
                       </div>
                     </Link>
                   </motion.div>
@@ -220,7 +220,7 @@ export default function Navigation() {
                   duration: 0.5,
                   ease: [0.4, 0, 0.2, 1],
                 }}
-                className="p-6 border-t border-[#E4B873]/40"
+                className="p-6 border-t border-[rgba(var(--warm-rgb),0.4)]"
               >
                 <SocialLinks variant="mobile-nav" />
               </motion.div>

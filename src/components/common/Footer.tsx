@@ -2,7 +2,7 @@ import SocialLinks from "@/components/common/SocialLinks";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[#3E543B] text-[#FAF3E6]">
+    <footer className="mt-20 bg-brand-primary text-brand-background">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <SocialLinks variant="footer" />

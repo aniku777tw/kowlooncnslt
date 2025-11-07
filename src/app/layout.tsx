@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen bg-gradient-to-br from-[#FAF3E6] via-[#F4D7A8] to-[#FAF3E6] text-[#3E543B]">
+        <div className="min-h-screen bg-gradient-to-br from-[var(--background)] via-[var(--secondary)] to-[var(--background)] text-brand-primary">
           <Navigation />
           <main>{children}</main>
           <Footer />

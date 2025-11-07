@@ -148,14 +148,14 @@ export default function Home() {
         {/* Hero Section */}
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-[#3E543B] mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-brand-primary mb-6 leading-tight">
             零基礎也能打造
               <br />
-              <span className="bg-gradient-to-r from-[#E4B873] to-[#6BBF59] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[var(--warm)] to-[var(--highlight)] bg-clip-text text-transparent">
               夜市現金流
               </span>
             </h1>
-            <p className="text-base md:text-2xl text-[#4A4A4A] mb-10 leading-relaxed md:leading-relaxed">
+            <p className="text-base md:text-2xl text-brand-muted mb-10 leading-relaxed md:leading-relaxed">
               想創業，卻被高昂租金和風險嚇退？夜市是最容易開始、最快見效的創業入口。別再摸索，跟著夜市翻身學一步步實作，從零開始也能穩穩賺。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -163,7 +163,7 @@ export default function Home() {
                 href={lineLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#3E543B] text-[#FAF3E6] rounded-full text-lg font-semibold hover:bg-[#324331] transition-all transform hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-4 bg-brand-primary text-brand-background rounded-full text-lg font-semibold hover:bg-brand-primary-dark transition-all transform hover:scale-105"
               >
                 立即諮詢
               </a>
@@ -177,14 +177,14 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal delay={0.1}>
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-[#3E543B] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-4">
                   關於我們
                 </h2>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="bg-[#FFF7E6] border border-[#E4B873]/70 rounded-2xl p-6 md:p-12 shadow-lg space-y-6 text-base md:text-lg text-[#4A4A4A] leading-relaxed">
-              <p className="leading-relaxed text-center text-xl md:text-2xl font-bold text-[#3E543B]">夜市翻身學</p>
+                <div className="bg-brand-soft border border-[rgba(var(--warm-rgb),0.7)] rounded-2xl p-6 md:p-12 shadow-lg space-y-6 text-base md:text-lg text-brand-muted leading-relaxed">
+               <p className="leading-relaxed text-center text-xl md:text-2xl font-bold text-brand-primary">夜市翻身學</p>
                 <p className="leading-relaxed">
                 來自真正擺過攤、賺過錢、踩過坑的夜市師傅。我們的目的很簡單：讓老闆賺更多，也讓想創業的人少走冤枉路。
                 </p>
@@ -198,10 +198,10 @@ export default function Home() {
       <ScrollReveal>
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-20">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#3E543B] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-4">
               現已上架翻身課程
             </h2>
-            <p className="text-base md:text-xl text-[#4A4A4A] max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-brand-muted max-w-2xl mx-auto">
               熱銷實戰課程上線中，幫你一步步打造人氣夜市攤位
             </p>
           </div>
@@ -221,7 +221,7 @@ export default function Home() {
             <div className="text-center">
               <a
                 href="/courses"
-                className="inline-block px-8 py-4 bg-[#E2725B] text-[#FAF3E6] rounded-full text-lg font-semibold hover:bg-[#d1624d] transition-all transform hover:scale-105"
+                className="inline-block px-8 py-4 bg-brand-accent text-brand-background rounded-full text-lg font-semibold hover:bg-[var(--accent-dark)] transition-all transform hover:scale-105"
               >
                 查看所有課程
               </a>
@@ -233,7 +233,7 @@ export default function Home() {
       {/* Why Choose Us */}
       <ScrollReveal>
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-20">
-          <div className="max-w-5xl mx-auto bg-[#3E543B] text-[#FAF3E6] rounded-[24px] md:rounded-[32px] p-7 md:p-10 shadow-2xl">
+          <div className="max-w-5xl mx-auto bg-brand-primary text-brand-background rounded-[24px] md:rounded-[32px] p-7 md:p-10 shadow-2xl">
             <ScrollReveal delay={0.1}>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
                 為什麼要找夜市翻身學？
@@ -242,8 +242,8 @@ export default function Home() {
             <div className="space-y-6 md:space-y-8 text-base md:text-lg">
               {whyChooseUs.map((item, index) => (
                 <ScrollReveal key={item.title} delay={0.2 + index * 0.1}>
-                  <div className="flex flex-col md:flex-row md:items-start md:gap-6 bg-[#FAF3E6]/10 rounded-2xl p-5 md:p-6">
-                    <div className="text-2xl md:text-4xl font-bold text-[#E4B873]">
+                  <div className="flex flex-col md:flex-row md:items-start md:gap-6 bg-[rgba(var(--background-rgb),0.1)] rounded-2xl p-5 md:p-6">
+                    <div className="text-2xl md:text-4xl font-bold text-brand-warm">
                       {item.title}
                     </div>
                     <p className="text-sm md:text-lg leading-relaxed mt-2 md:mt-0">
@@ -260,36 +260,36 @@ export default function Home() {
       {/* Early Bird & Contact */}
       <ScrollReveal>
         <section id="contact" className="container mx-auto px-5 md:px-6 py-16 md:py-20">
-          <div className="max-w-5xl mx-auto bg-white/90 border border-[#E4B873]/80 rounded-[24px] md:rounded-[28px] p-5 md:p-12 shadow-2xl">
+          <div className="max-w-5xl mx-auto bg-white/90 border border-[rgba(var(--warm-rgb),0.8)] rounded-[24px] md:rounded-[28px] p-5 md:p-12 shadow-2xl">
             <div className="grid gap-6 md:gap-10 lg:grid-cols-[1.2fr_1fr] items-start">
               <div className="space-y-5 md:space-y-6">
                 <ScrollReveal delay={0.1}>
-                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#F4D7A8] text-[#3E543B] rounded-full font-semibold">
+                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-brand-secondary text-brand-primary rounded-full font-semibold">
                     <span>🎯</span>
                     <span>早鳥優惠進行中</span>
                   </div>
                 </ScrollReveal>
                 <ScrollReveal delay={0.15}>
-                  <h2 className="text-3xl md:text-5xl font-bold text-[#E2725B]">
+                  <h2 className="text-3xl md:text-5xl font-bold text-brand-accent">
                     早鳥價格等你來諮詢
                   </h2>
                 </ScrollReveal>
                 <ScrollReveal delay={0.2}>
-                  <p className="text-lg md:text-2xl text-[#3E543B] font-semibold">
+                  <p className="text-lg md:text-2xl text-brand-primary font-semibold">
                     20 萬不用 · 15 萬不用 · 10 萬不用
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.25}>
-                  <p className="text-base md:text-lg text-[#4A4A4A] leading-relaxed">
+                  <p className="text-base md:text-lg text-brand-muted leading-relaxed">
                     課程仍在早鳥期，只要留下資訊，我們立刻為你安排專人提供最優惠的翻身方案。
                   </p>
                 </ScrollReveal>
               </div>
-              <div className="bg-gradient-to-br from-[#3E543B] via-[#4E6A49] to-[#3E543B] text-[#FAF3E6] rounded-3xl p-6 md:p-8 shadow-lg space-y-6">
+              <div className="bg-gradient-to-br from-[var(--primary)] via-[var(--primary-deep)] to-[var(--primary)] text-brand-background rounded-3xl p-6 md:p-8 shadow-lg space-y-6">
                 <ScrollReveal delay={0.2}>
                   <div className="space-y-4">
                     <h3 className="text-2xl md:text-3xl font-bold">聯絡我們</h3>
-                    <p className="text-base md:text-lg text-[#FAF3E6]/85 leading-relaxed">
+                    <p className="text-base md:text-lg text-[rgba(var(--background-rgb),0.85)] leading-relaxed">
                       想了解課程內容、創業計劃或夜市翻身學的資源配置？留下聯絡方式，我們的顧問會在 24 小時內回覆。
                     </p>
                   </div>
@@ -300,11 +300,11 @@ export default function Home() {
                       href={lineLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#E4B873] to-[#6BBF59] text-[#3E543B] rounded-full text-base md:text-lg font-semibold hover:from-[#d7a963] hover:to-[#5da84d] transition-all transform hover:-translate-y-1 shadow-xl"
+                      className="inline-flex w-full items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[var(--warm)] to-[var(--highlight)] text-brand-primary rounded-full text-base md:text-lg font-semibold hover:from-[var(--warm-dark)] hover:to-[var(--highlight-dark)] transition-all transform hover:-translate-y-1 shadow-xl"
                     >
                       立即諮詢早鳥方案
                     </a>
-                    <p className="text-xs md:text-sm text-[#FAF3E6]/70 text-center">
+                    <p className="text-xs md:text-sm text-[rgba(var(--background-rgb),0.7)] text-center">
                       加入 LINE，預約顧問諮詢
                     </p>
                   </div>

@@ -168,10 +168,10 @@ export default function CoursesPage() {
         {/* Header */}
         <section className="container mx-auto px-5 md:px-6 py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-[#3E543B] mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-brand-primary mb-6 leading-tight">
               課程資訊
             </h1>
-            <p className="text-xl md:text-2xl text-[#4A4A4A] leading-relaxed">
+            <p className="text-xl md:text-2xl text-brand-muted leading-relaxed">
               探索我們的專業課程，選擇適合您的學習路徑，提升技能與知識
             </p>
           </div>
@@ -180,10 +180,10 @@ export default function CoursesPage() {
         {/* Why Us Section */}
         <section className="container mx-auto px-4 md:px-8 pb-16 md:pb-24">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gradient-to-br from-[#F4D7A8] via-[#FAF3E6] to-[#F4D7A8] rounded-3xl p-8 shadow-xl border border-[#E4B873]/60">
+            <div className="bg-gradient-to-br from-[var(--secondary)] via-[var(--background)] to-[var(--secondary)] rounded-3xl p-8 shadow-xl border border-[rgba(var(--warm-rgb),0.6)]">
               <div className="flex items-start gap-4 mb-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-[#3E543B]">
+                  <h2 className="text-3xl font-bold text-brand-primary">
                     為什麼找夜市翻身學
                   </h2>
                 </div>
@@ -191,17 +191,17 @@ export default function CoursesPage() {
               <div className="space-y-8">
                 {reasons.map((reason) => (
                     <div key={reason.id} className="flex gap-6">
-                     <div className="text-4xl font-extrabold text-[#E2725B] drop-shadow-sm">
+                     <div className="text-4xl font-extrabold text-brand-accent drop-shadow-sm">
                       {reason.id}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-[#3E543B] mb-4">
+                      <h3 className="text-2xl font-bold text-brand-primary mb-4">
                         {reason.title}
                       </h3>
-                       <ul className="space-y-3 text-[#4A4A4A]">
+                       <ul className="space-y-3 text-brand-muted">
                         {reason.points.map((point, index) => (
                            <li key={index} className="flex items-start gap-3 leading-relaxed">
-                             <span className="mt-2 flex h-2 w-2 min-w-[0.5rem] min-h-[0.5rem] rounded-full bg-[#6BBF59]" />
+                             <span className="mt-2 flex h-2 w-2 min-w-[0.5rem] min-h-[0.5rem] rounded-full bg-[var(--highlight)]" />
                              <span className="text-sm md:text-base">{point}</span>
                           </li>
                         ))}
@@ -216,14 +216,14 @@ export default function CoursesPage() {
 
         {/* Enrollment Benefits */}
         <section className="container mx-auto px-4 md:px-8 pb-16 md:pb-24">
-          <div className="max-w-2xl mx-auto bg-[#FAF3E6] rounded-3xl border border-[#E4B873]/50 shadow-lg p-8">
+          <div className="max-w-2xl mx-auto bg-brand-background rounded-3xl border border-[rgba(var(--warm-rgb),0.5)] shadow-lg p-8">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
               <div>
                 
-                <h2 className="text-3xl mb-2 font-bold text-[#3E543B]">
+                <h2 className="text-3xl mb-2 font-bold text-brand-primary">
                   報名就有滿滿資源
                 </h2>
-                <p className="text-sm uppercase tracking-[0.3em] text-[#4A4A4A]/70">
+                <p className="text-sm uppercase tracking-[0.3em] text-[rgba(var(--muted-rgb),0.7)]">
                   報名課程將獲得
                 </p>
               </div>
@@ -232,12 +232,12 @@ export default function CoursesPage() {
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-4 bg-white rounded-2xl px-8 py-4 shadow-sm border border-[#F4D7A8]/60"
+                  className="flex items-center gap-4 bg-white rounded-2xl px-8 py-4 shadow-sm border border-[rgba(var(--secondary-rgb),0.6)]"
                 >
-                  <div className="h-10 w-10 flex items-center justify-center rounded-full bg-[#E4B873] text-[#3E543B] font-bold">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-full bg-brand-warm text-brand-primary font-bold">
                     {index + 1}
                   </div>
-                  <span className="text-[#3E543B] font-semibold">{benefit}</span>
+                  <span className="text-brand-primary font-semibold">{benefit}</span>
                 </div>
               ))}
             </div>
