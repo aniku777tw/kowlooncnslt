@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import favicon from "@/image/favicon.jpg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "夜市翻身學 - 專業諮詢服務",
   description: "提供專業的商業諮詢服務，幫助企業實現目標、解決挑戰並創造價值",
+  icons: {
+    icon: favicon.src,
+  },
 };
 
 export default function RootLayout({
