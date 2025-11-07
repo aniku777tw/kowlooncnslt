@@ -145,16 +145,13 @@ export default function CoursesPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
               <div>
                 
-                <h2 className="text-3xl font-bold text-[#3E543B]">
+                <h2 className="text-3xl mb-2 font-bold text-[#3E543B]">
                   報名就有滿滿資源
                 </h2>
                 <p className="text-sm uppercase tracking-[0.3em] text-[#4A4A4A]/70">
                   報名課程將獲得
                 </p>
               </div>
-              <span className="inline-flex items-center px-4 py-2 bg-[#6BBF59] text-[#FAF3E6] rounded-full font-semibold shadow">
-                限量名額
-              </span>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {benefits.map((benefit, index) => (
