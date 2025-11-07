@@ -184,7 +184,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <div className="bg-[#FFF7E6] border border-[#E4B873]/70 rounded-2xl p-6 md:p-12 shadow-lg space-y-6 text-base md:text-lg text-[#4A4A4A] leading-relaxed">
-              <p className="leading-relaxed">夜市翻身學</p>
+              <p className="leading-relaxed text-center text-xl md:text-2xl font-bold text-[#3E543B]">夜市翻身學</p>
                 <p className="leading-relaxed">
                 來自真正擺過攤、賺過錢、踩過坑的夜市師傅。我們的目的很簡單：讓老闆賺更多，也讓想創業的人少走冤枉路。
                 </p>
