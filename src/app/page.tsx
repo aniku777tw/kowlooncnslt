@@ -245,7 +245,7 @@ export default function Home() {
             <div className="space-y-6 md:space-y-8 text-base md:text-lg">
               {whyChooseUs.map((item, index) => (
                 <ScrollReveal key={item.title} delay={0.2 + index * 0.1}>
-                  <div className="flex flex-col md:flex-row md:items-start md:gap-6 bg-[rgba(var(--background-rgb),0.1)] rounded-2xl p-5 md:p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:gap-6 bg-[rgba(var(--background-rgb),0.1)] rounded-2xl p-5 md:p-6">
                     <div className="text-2xl md:text-4xl font-bold text-brand-warm">
                       {item.title}
                     </div>
