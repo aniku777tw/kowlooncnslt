@@ -12,7 +12,7 @@ const siteUrl = "https://kowlooncnslt.com";
 const coursesPageUrl = `${siteUrl}/courses`;
 
 export const metadata: Metadata = {
-  title: "夜市翻身學課程資訊｜夜市創業實戰課程總覽",
+  title: "課程資訊｜夜市創業實戰課程總覽",
   description:
     "夜市翻身學提供可麗餅、牛奶飲品、炸牛奶等熱門夜市創業課程，涵蓋配方研發、攤位營運、行銷策略與成本控管，協助你快速打造高收益夜市品牌。",
   keywords: [
