@@ -79,6 +79,12 @@ export default function Navigation() {
             關於我們
           </Link>
           <Link
+            href="/news"
+            className="text-[#3E543B] hover:text-[#E2725B] transition-colors"
+          >
+            新聞報導
+          </Link>
+          <Link
             href="/#about"
             className="text-[#3E543B] hover:text-[#E2725B] transition-colors"
             onClick={(e) => {
@@ -154,6 +160,13 @@ export default function Navigation() {
                       scrollToElement("about", () => setIsMenuOpen(false));
                     },
                   },
+              {
+                href: "/news",
+
+                title: "新聞報導",
+                description: "媒體採訪與最新消息",
+                onClick: () => setIsMenuOpen(false),
+              },
                   {
                     href: "/#contact",
 
