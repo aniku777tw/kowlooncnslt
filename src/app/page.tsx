@@ -7,7 +7,7 @@ import { socialLinks } from "@/constants/socialLinks";
 import crepeImage from "@/images/可麗餅.jpg";
 import milkImage from "@/images/牛奶味.jpg";
 import friedMilkImage from "@/images/炸牛奶.jpg";
-import logoImage from "@/images/logo.webp";
+import faviconImage from "@/images/favicon.jpg";
 
 const siteUrl = "https://kowlooncnslt.com";
 
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}${logoImage.src}`,
-        width: logoImage.width,
-        height: logoImage.height,
+        url: faviconImage.src,
+        width: faviconImage.width,
+        height: faviconImage.height,
         alt: "夜市翻身學品牌標誌",
       },
     ],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "夜市翻身學｜夜市創業課程與顧問諮詢",
     description:
       "夜市翻身學提供夜市創業課程、攤位 SOP 與行銷策略，協助新手快速穩健翻身。",
-    images: [`${siteUrl}${logoImage.src}`],
+    images: [faviconImage.src],
   },
   other: {
     "og:locale:alternate": "zh_HK",
@@ -104,7 +104,7 @@ export default function Home() {
     "@type": "EducationalOrganization",
     name: "夜市翻身學",
     url: siteUrl,
-    logo: `${siteUrl}${logoImage.src}`,
+    logo: faviconImage.src,
     sameAs: socialLinks.map((link) => link.href),
     description:
       "夜市翻身學提供夜市創業課程與一對一顧問諮詢服務，協助攤商優化產品、營運與行銷。",

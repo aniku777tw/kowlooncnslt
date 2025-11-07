@@ -3,6 +3,7 @@ import Script from "next/script";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { socialLinks } from "@/constants/socialLinks";
+import faviconImage from "@/images/favicon.jpg";
 
 const siteUrl = "https://kowlooncnslt.com";
 const newsPageUrl = `${siteUrl}/news`;
@@ -29,6 +30,14 @@ export const metadata: Metadata = {
     siteName: "夜市翻身學",
     locale: "zh_TW",
     type: "website",
+    images: [
+      {
+        url: faviconImage.src,
+        width: faviconImage.width,
+        height: faviconImage.height,
+        alt: "夜市翻身學品牌標誌",
+      },
+    ],
   },
   twitter: {
     card: "summary",
