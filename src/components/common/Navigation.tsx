@@ -120,7 +120,7 @@ export default function Navigation() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="flex flex-col h-full"
+              className="flex h-full flex-col"
             >
               {/* Header */}
               <motion.div
@@ -141,75 +141,77 @@ export default function Navigation() {
                 </motion.button>
               </motion.div>
               {/* Menu Items - Centered with Icons */}
-              <div className="flex flex-col items-center justify-center gap-4 flex-grow px-6 py-12">
-                {[
-                  {
-                    href: "/courses",
+              <div className="flex-1 overflow-y-auto px-6 py-10">
+                <div className="flex flex-col items-center gap-4">
+                  {[
+                    {
+                      href: "/courses",
 
-                    title: "課程資訊",
-                    description: "探索專業課程",
-                    onClick: () => setIsMenuOpen(false),
-                  },
-                  {
-                    href: "/#about",
-
-                    title: "關於我們",
-                    description: "了解我們的團隊",
-                    onClick: (e: MouseEvent) => {
-                      e.preventDefault();
-                      scrollToElement("about", () => setIsMenuOpen(false));
+                      title: "課程資訊",
+                      description: "探索專業課程",
+                      onClick: () => setIsMenuOpen(false),
                     },
-                  },
-              {
-                href: "/news",
+                    {
+                      href: "/#about",
 
-                title: "新聞報導",
-                description: "媒體採訪與最新消息",
-                onClick: () => setIsMenuOpen(false),
-              },
-                  {
-                    href: "/#contact",
-
-                    title: "聯絡我們",
-                    description: "開始您的專案",
-                    onClick: (e: MouseEvent) => {
-                      e.preventDefault();
-                      scrollToElement("contact", () => setIsMenuOpen(false));
+                      title: "關於我們",
+                      description: "了解我們的團隊",
+                      onClick: (e: MouseEvent) => {
+                        e.preventDefault();
+                        scrollToElement("about", () => setIsMenuOpen(false));
+                      },
                     },
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ y: 50, opacity: 0, scale: 0.9 }}
-                    animate={{ y: 0, opacity: 1, scale: 1 }}
-                    transition={{
-                      delay: 0.2 + index * 0.1,
-                      duration: 0.5,
-                      ease: [0.4, 0, 0.2, 1],
-                    }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full max-w-xs"
-                  >
-                    <Link
-                      href={item.href}
-                      className="w-full group relative overflow-hidden rounded-2xl bg-[rgba(var(--background-rgb),0.9)] backdrop-blur-sm border border-[rgba(var(--warm-rgb),0.6)] hover:border-[rgba(var(--accent-rgb),0.6)] transition-all duration-300 block"
-                      onClick={item.onClick}
+                {
+                  href: "/news",
+
+                  title: "新聞報導",
+                  description: "媒體採訪與最新消息",
+                  onClick: () => setIsMenuOpen(false),
+                },
+                    {
+                      href: "/#contact",
+
+                      title: "聯絡我們",
+                      description: "開始您的專案",
+                      onClick: (e: MouseEvent) => {
+                        e.preventDefault();
+                        scrollToElement("contact", () => setIsMenuOpen(false));
+                      },
+                    },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={item.href}
+                      initial={{ y: 50, opacity: 0, scale: 0.9 }}
+                      animate={{ y: 0, opacity: 1, scale: 1 }}
+                      transition={{
+                        delay: 0.2 + index * 0.1,
+                        duration: 0.5,
+                        ease: [0.4, 0, 0.2, 1],
+                      }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full max-w-xs"
                     >
-                      <div className="flex items-center gap-4 p-6">
-                        <div className="flex-1">
-                          <div className="text-xl font-semibold text-brand-primary group-hover:text-brand-accent transition-colors">
-                            {item.title}
+                      <Link
+                        href={item.href}
+                        className="w-full group relative overflow-hidden rounded-2xl bg-[rgba(var(--background-rgb),0.9)] backdrop-blur-sm border border-[rgba(var(--warm-rgb),0.6)] hover:border-[rgba(var(--accent-rgb),0.6)] transition-all duration-300 block"
+                        onClick={item.onClick}
+                      >
+                        <div className="flex items-center gap-4 p-6">
+                          <div className="flex-1">
+                            <div className="text-xl font-semibold text-brand-primary group-hover:text-brand-accent transition-colors">
+                              {item.title}
+                            </div>
+                            <div className="text-sm text-brand-muted mt-1">
+                              {item.description}
+                            </div>
                           </div>
-                          <div className="text-sm text-brand-muted mt-1">
-                            {item.description}
-                          </div>
+                          <FiArrowRight className="h-5 w-5 text-brand-warm transition-colors group-hover:text-brand-accent" />
                         </div>
-                        <FiArrowRight className="h-5 w-5 text-brand-warm transition-colors group-hover:text-brand-accent" />
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
               {/* Footer Button */}
               <motion.div
