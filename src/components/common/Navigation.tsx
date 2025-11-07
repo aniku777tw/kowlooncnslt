@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import logo from "@/app/logo.webp";
-import SocialLinks from "@/components/SocialLinks";
+import SocialLinks from "@/components/common/SocialLinks";
 
 
 export default function Navigation() {

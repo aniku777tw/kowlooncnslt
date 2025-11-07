@@ -1,9 +1,53 @@
-import ContentWrapper from "@/components/ContentWrapper";
-import ScrollReveal from "@/components/ScrollReveal";
+import ContentWrapper from "@/components/common/ContentWrapper";
+import ScrollReveal from "@/components/common/ScrollReveal";
+import CourseHighlightCard from "@/components/Home/CourseHighlightCard";
 import { socialLinks } from "@/constants/socialLinks";
+import crepeImage from "@/image/可麗餅.png";
+import milkImage from "@/image/S__18628640_0.jpg";
+import friedMilkImage from "@/image/炸牛奶.jpg";
 
 export default function Home() {
   const lineLink = socialLinks.find((link) => link.label === "LINE")?.href;
+
+  const coursesIntro = [
+    {
+      icon: "🥞",
+      title: "可麗餅翻身班",
+      description: "掌握經典甜點配方，教你打造排隊級的可麗餅攤位。",
+      backgroundImage: crepeImage.src,
+    },
+    {
+      icon: "🧋",
+      title: "牛乳味研習會",
+      description: "牛奶系飲品賣點全解析，從備料到出杯全程 SOP。",
+      backgroundImage: milkImage.src,
+    },
+    {
+      icon: "🍮",
+      title: "炸牛奶手作課",
+      description: "人氣甜點一次學會，酥脆口感與食材控管完整傳授。",
+      backgroundImage: friedMilkImage.src,
+    },
+  ]
+
+  const whyChooseUs = [
+    {
+      title: "1. 避開創業陷阱",
+      description:
+        "避免亂花錢買錯設備、囤錯貨，創業初期把資金花在刀口上。"
+    },
+    {
+      title: "2. 一套標準化 SOP",
+      description:
+        "有經驗的老師親自引導，今天學、明天攤位就能用。"
+    },
+    {
+      title: "3. 長期翻身計劃",
+      description:
+        "翻身不只是一次課，未來持續提供資源與方案，陪你走得更穩。"
+    }
+  ]
+
   return (
     <ContentWrapper>
         {/* Hero Section */}
@@ -67,33 +111,14 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mb-10 md:mb-12">
-            {[
-              {
-                icon: "🥞",
-                title: "可麗餅翻身班",
-                description: "掌握經典甜點配方，教你打造排隊級的可麗餅攤位。"
-              },
-              {
-                icon: "🧋",
-                title: "牛乳味研習會",
-                description: "牛奶系飲品賣點全解析，從備料到出杯全程 SOP。"
-              },
-              {
-                icon: "🍮",
-                title: "炸牛奶手作課",
-                description: "人氣甜點一次學會，酥脆口感與食材控管完整傳授。"
-              }
-            ].map((course, index) => (
+            {coursesIntro.map((course, index) => (
               <ScrollReveal key={course.title} delay={index * 0.1}>
-                <div className="p-6 md:p-8 bg-[#FAF3E6]/90 border border-[#E4B873]/70 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
-                  <div className="text-4xl md:text-5xl mb-4">{course.icon}</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#3E543B] mb-3">
-                    {course.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-[#4A4A4A] leading-relaxed">
-                    {course.description}
-                  </p>
-                </div>
+                <CourseHighlightCard
+                  icon={course.icon}
+                  title={course.title}
+                  description={course.description}
+                  backgroundImage={course.backgroundImage}
+                />
               </ScrollReveal>
             ))}
           </div>
@@ -120,23 +145,7 @@ export default function Home() {
               </h2>
             </ScrollReveal>
             <div className="space-y-6 md:space-y-8 text-base md:text-lg">
-              {[
-                {
-                  title: "1. 避開創業陷阱",
-                  description:
-                    "避免亂花錢買錯設備、囤錯貨，創業初期把資金花在刀口上。"
-                },
-                {
-                  title: "2. 一套標準化 SOP",
-                  description:
-                    "有經驗的老師親自引導，今天學、明天攤位就能用。"
-                },
-                {
-                  title: "3. 長期翻身計劃",
-                  description:
-                    "翻身不只是一次課，未來持續提供資源與方案，陪你走得更穩。"
-                }
-              ].map((item, index) => (
+              {whyChooseUs.map((item, index) => (
                 <ScrollReveal key={item.title} delay={0.2 + index * 0.1}>
                   <div className="flex flex-col md:flex-row md:items-start md:gap-6 bg-[#FAF3E6]/10 rounded-2xl p-5 md:p-6">
                     <div className="text-2xl md:text-4xl font-bold text-[#E4B873]">

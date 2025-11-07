@@ -1,5 +1,9 @@
-import ContentWrapper from "@/components/ContentWrapper";
+import ContentWrapper from "@/components/common/ContentWrapper";
+import CourseCard from "@/components/Courses/CourseCard";
 import { socialLinks } from "@/constants/socialLinks";
+import crepeImage from "@/image/可麗餅.png";
+import milkImage from "@/image/S__18628640_0.jpg";
+import friedMilkImage from "@/image/炸牛奶.jpg";
 
 export const metadata = {
   title: "課程資訊 - 夜市翻身學",
@@ -57,6 +61,7 @@ export default function CoursesPage() {
         "現場製作節奏實戰演練",
         "食材成本與定價策略",
       ],
+      backgroundImage: crepeImage.src,
     },
     {
       id: 2,
@@ -71,6 +76,7 @@ export default function CoursesPage() {
         "高峰期快速出杯技巧",
         "社群拍攝與主題包裝",
       ],
+      backgroundImage: milkImage.src,
     },
     {
       id: 3,
@@ -85,6 +91,7 @@ export default function CoursesPage() {
         "外帶包裝與保溫策略",
         "搭配飲品或套餐設計",
       ],
+      backgroundImage: friedMilkImage.src,  
     },
   ];
 
@@ -173,40 +180,7 @@ export default function CoursesPage() {
         <section className="container mx-auto px-4 md:px-8 pb-16 md:pb-24">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {courses.map((course) => (
-              <div
-                key={course.id}
-                className="bg-[#FAF3E6]/90 border border-[#E4B873]/70 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 flex flex-col"
-              >
-                <div className="text-5xl mb-4">{course.icon}</div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#3E543B] mb-3">
-                  {course.title}
-                </h3>
-                <p className="text-sm md:text-base text-[#4A4A4A] leading-relaxed mb-6 flex-grow">
-                  {course.description}
-                </p>
-                <div className="mb-6">
-                  <h4 className="text-[#3E543B] font-semibold mb-3">課程內容：</h4>
-                  <ul className="space-y-2 text-sm md:text-base">
-                    {course.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="text-[#4A4A4A] text-sm flex items-start gap-2"
-                      >
-                        <span className="text-[#6BBF59]">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <a
-                  href={lineLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center px-8 py-4 bg-[#E2725B] text-[#FAF3E6] rounded-full font-semibold transition-colors hover:bg-[#d1624d]"
-                >
-                  立即報名
-                </a>
-              </div>
+              <CourseCard key={course.id} course={course} lineLink={lineLink} />
             ))}
           </div>
         </section>
