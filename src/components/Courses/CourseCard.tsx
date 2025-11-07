@@ -1,7 +1,9 @@
+import { type ReactNode } from "react";
+
 type CourseCardProps = {
   course: {
     id: number;
-    icon: string;
+    icon: ReactNode;
     title: string;
     description: string;
     features: string[];

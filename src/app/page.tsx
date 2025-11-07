@@ -5,22 +5,25 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 import CourseHighlightCard from "@/components/Home/CourseHighlightCard";
 import { socialLinks } from "@/constants/socialLinks";
 import crepeImage from "@/images/可麗餅.jpg";
-import milkImage from "@/images/牛奶味.jpg";
+import beefImage from "@/images/牛滷味.jpg";
 import friedMilkImage from "@/images/炸牛奶.jpg";
 import faviconImage from "@/images/favicon.jpg";
+import { MdSoupKitchen } from "react-icons/md";
+import { GiCook, GiMilkCarton } from "react-icons/gi";
 
 const siteUrl = "https://kowlooncnslt.com";
 
 export const metadata: Metadata = {
   title: "夜市翻身學｜夜市創業課程與顧問諮詢",
   description:
-    "夜市翻身學提供可麗餅、牛奶飲品、炸牛奶等夜市創業課程與一對一顧問諮詢，從選品、攤位營運到行銷策略，帶你快速打造高收益夜市品牌。",
+    "夜市翻身學提供可麗餅、牛滷味、炸牛奶等夜市創業課程與一對一顧問諮詢，從選品、攤位營運到行銷策略，帶你快速打造高收益夜市品牌。",
   keywords: [
     "夜市翻身學",
     "夜市創業",
     "夜市課程",
     "可麗餅課程",
-    "炸牛奶",
+    "炸牛奶課程",
+    "牛滷味課程",
     "夜市顧問",
     "攤車創業",
     "創業諮詢",
@@ -62,19 +65,19 @@ export default function Home() {
 
   const coursesIntro = [
     {
-      icon: "🥞",
+      icon: <GiCook size={48} className="text-brand-primary" />,
       title: "可麗餅翻身班",
       description: "掌握經典甜點配方，教你打造排隊級的可麗餅攤位。",
       backgroundImage: crepeImage.src,
     },
     {
-      icon: "🧋",
-      title: "牛乳味研習會",
-      description: "牛奶系飲品賣點全解析，從備料到出杯全程 SOP。",
-      backgroundImage: milkImage.src,
+      icon: <MdSoupKitchen size={48} className="text-brand-primary" />,
+      title: "牛滷味研習會",
+      description: "滷汁秘方、備料規劃與出餐節奏一次到位，打造暖心牛滷味攤位。",
+      backgroundImage: beefImage.src,
     },
     {
-      icon: "🍮",
+      icon: <GiMilkCarton size={48} className="text-brand-primary" />,
       title: "炸牛奶手作課",
       description: "人氣甜點一次學會，酥脆口感與食材控管完整傳授。",
       backgroundImage: friedMilkImage.src,
