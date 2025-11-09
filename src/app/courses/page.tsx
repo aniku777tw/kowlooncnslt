@@ -6,7 +6,7 @@ import { socialLinks } from "@/constants/socialLinks";
 import crepeImage from "@/images/可麗餅.jpg";
 import beefImage from "@/images/牛滷味.jpg";
 import friedMilkImage from "@/images/炸牛奶.jpg";
-import logoImage from "@/images/logo.webp";
+import faviconImage from "@/images/favicon.jpg";
 import { MdSoupKitchen } from "react-icons/md";
 import { GiCook, GiMilkCarton } from "react-icons/gi";
 
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: logoImage.src,
-        width: logoImage.width,
-        height: logoImage.height,
+        url: faviconImage.src,
+        width: faviconImage.width,
+        height: faviconImage.height,
         alt: "夜市翻身學品牌標誌",
       },
     ],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "夜市翻身學課程資訊",
     description:
       "夜市翻身學提供夜市創業完整課程與顧問服務，協助你打造人氣夜市攤位。",
-    images: [logoImage.src,],
+    images: [faviconImage.src],
   },
 };
 
